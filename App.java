@@ -6,8 +6,8 @@ public class App {
 	public static void main(String[] args) {
 		
 		// instance of each class from Logger interface
-		Logger astGreet = new AsteriskLogger("Can Hello be an error?");
-		Logger spaceGreet = new SpacedLogger("Why is Hello so wrong!?");
+		Logger astGreet = new AsteriskLogger("Hello");
+		Logger spaceGreet = new SpacedLogger("Hello");
 		
 		
 		// Test AsteriskLogger methods

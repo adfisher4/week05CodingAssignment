@@ -8,8 +8,8 @@ public class SpacedLogger implements Logger {
 		this.str = str;
 	}
 	
-	@Override
-	public void log(String message) {
+	//Private method to space out the message
+	private String addSpaces(String message) {
 		StringBuilder spacedMess = new StringBuilder();
 		char[] letters = message.toCharArray();
 		for (char letter: letters) {
@@ -17,24 +17,20 @@ public class SpacedLogger implements Logger {
 			spacedMess.append(" ");
 			
 		}
-		
-		System.out.println(spacedMess.toString());
+		return spacedMess.toString();
+	}
+	
+	@Override
+	public void log(String message) {
+		System.out.println(addSpaces(message));
 		
 	}
 	
 	@Override
 	public void error(String message) {
 		StringBuilder spacedErrMess = new StringBuilder();
-		StringBuilder spacedMess = new StringBuilder();
 		spacedErrMess.append("ERROR: ");
-		
-		
-		char[] letters = message.toCharArray();
-		for (char letter: letters) {
-			spacedMess.append(letter);
-			spacedMess.append(" ");
-		}
-		spacedErrMess.append(spacedMess.toString());
+		spacedErrMess.append(addSpaces(message));
 			
 		
 		System.err.println(spacedErrMess.toString());

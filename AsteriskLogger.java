@@ -11,7 +11,6 @@ public class AsteriskLogger implements Logger {
 	@Override
 	public void log(String message) {
 		StringBuilder messInAst = new StringBuilder();
-		
 		messInAst.append("***");
 		messInAst.append(message);
 		messInAst.append("***");
@@ -24,12 +23,14 @@ public class AsteriskLogger implements Logger {
 		StringBuilder messInAst = new StringBuilder();
 		messInAst.append("*".repeat(errMessage.length() + 13));
 		messInAst.append("\n");
-		messInAst.append("Error: " + errMessage);
+		messInAst.append("***Error: ");
+		messInAst.append(errMessage);
+		messInAst.append("***");
 		messInAst.append("\n");
 		messInAst.append("*".repeat(errMessage.length() + 13));
 		
 		System.err.println(messInAst.toString());
 	}
-	
+
 
 }
